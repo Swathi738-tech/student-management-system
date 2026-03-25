@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+if(!localStorage.getItem("loggedIn")){
+    window.location.href="index.html";
+}
+</script>
+
+<div class="container">
+    <h1>Student Management</h1>
+
+    <input type="text" id="search" placeholder="Search student..." onkeyup="searchStudent()">
+
+    <form id="studentForm">
+        <input type="hidden" id="studentId">
+
+        <input type="text" id="name" placeholder="Student Name" required>
+        <input type="text" id="department" placeholder="Department" required>
+        <input type="email" id="email" placeholder="Email" required>
+
+        <button type="submit">Save Student</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
