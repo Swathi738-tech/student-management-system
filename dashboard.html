@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔒 Login check -->
+<script>
+if (!localStorage.getItem("loggedIn")) {
+    window.location.href = "index.html";
+}
+</script>
+
+<div class="container">
+    <h1>Dashboard</h1>
+
+    <h2>Total Students: <span id="count">0</span></h2>
+
+    <button onclick="goToSystem()">Manage Students</button>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+let students = JSON.parse(localStorage.getItem("students")) || [];
+
+// show total students count
+document.getElementById("count").innerText = students.length;
+
+// go to student system page
+function goToSystem() {
+    window.location.href = "system.html";
+}
+
+// logout function
+function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
