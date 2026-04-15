@@ -1,0 +1,26 @@
+.login-body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#0f172a;
+}
+
+.login-box {
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:300px;
+}
+
+.sidebar {
+    width:200px;
+    background:#1e293b;
+    color:white;
+    height:100vh;
+}
+
+.dark {
+    background:#0f172a;
+    color:white;
+}
